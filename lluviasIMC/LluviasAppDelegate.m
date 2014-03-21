@@ -186,7 +186,7 @@
 // If the coordinator doesn't already exist, it is created and the application's store added to it.
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    //@jsalazar: comentario de prueba 
+    //@jsalazar: comentario de prueba
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
