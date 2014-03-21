@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="APP_ROL" representedClassName="APP_ROL" syncable="YES">
+        <attribute name="idRol" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="rolName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="app_usuario_rol" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="APP_USUARIO_ROL" inverseName="app_rol" inverseEntity="APP_USUARIO_ROL" syncable="YES"/>
+    </entity>
+    <entity name="APP_USUARIO" representedClassName="APP_USUARIO" syncable="YES">
+        <attribute name="apellido" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idUsuario" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isMailSent" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isNewUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isVerified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puesto" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="usuarioCorreo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usuarioPwd" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="app_usuario_rol" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="APP_USUARIO_ROL" inverseName="app_usuario" inverseEntity="APP_USUARIO_ROL" syncable="YES"/>
+        <relationship name="cat_sesion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_SESION" inverseName="app_usuario" inverseEntity="CAT_SESION" syncable="YES"/>
+        <relationship name="cat_upload_log" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_UPLOAD_LOG" inverseName="app_usuario" inverseEntity="CAT_UPLOAD_LOG" syncable="YES"/>
+    </entity>
+    <entity name="APP_USUARIO_ROL" representedClassName="APP_USUARIO_ROL" syncable="YES">
+        <attribute name="idRol" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idUsuario" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="app_rol" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APP_ROL" inverseName="app_usuario_rol" inverseEntity="APP_ROL" syncable="YES"/>
+        <relationship name="app_usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APP_USUARIO" inverseName="app_usuario_rol" inverseEntity="APP_USUARIO" syncable="YES"/>
+    </entity>
+    <entity name="CAT_AGRUPADOR_ISOYETA" syncable="YES">
+        <attribute name="agrupadorIsoyetaName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idAgrupadorIsoyeta" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="CAT_CONDPRO" representedClassName="CAT_CONDPRO" syncable="YES">
+        <attribute name="condicionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idCondicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="pathCodicion" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cat_operacion_estructura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_OPERACION_ESTRUCTURA" inverseName="cat_condpro" inverseEntity="CAT_OPERACION_ESTRUCTURA" syncable="YES"/>
+        <relationship name="ci_registro" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CI_REGISTRO" inverseName="cat_condpro" inverseEntity="CI_REGISTRO" syncable="YES"/>
+    </entity>
+    <entity name="CAT_DEPENDENCIA" representedClassName="CAT_DEPENDENCIA" syncable="YES">
+        <attribute name="dependenciaName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idDependencia" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="rel_estructura_dependencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="REL_ESTRUCTURA_DEPENDENCIA" inverseName="cat_dependencia" inverseEntity="REL_ESTRUCTURA_DEPENDENCIA" syncable="YES"/>
+    </entity>
+    <entity name="CAT_ESTRUCTURA" representedClassName="CAT_ESTRUCTURA" syncable="YES">
+        <attribute name="estructuraName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idEstructura" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idSistema" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="cat_operacion_estructura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_OPERACION_ESTRUCTURA" inverseName="cat_estructura" inverseEntity="CAT_OPERACION_ESTRUCTURA" syncable="YES"/>
+        <relationship name="cat_sistema" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_SISTEMA" inverseName="cat_estructura" inverseEntity="CAT_SISTEMA" syncable="YES"/>
+        <relationship name="rel_est_puntomed" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="REL_EST_PUNTOMED" inverseName="cat_estructura" inverseEntity="REL_EST_PUNTOMED" syncable="YES"/>
+        <relationship name="rel_estructura_dependencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="REL_ESTRUCTURA_DEPENDENCIA" inverseName="cat_estructura" inverseEntity="REL_ESTRUCTURA_DEPENDENCIA" syncable="YES"/>
+    </entity>
+    <entity name="CAT_LINKS" syncable="YES">
+        <attribute name="idLink" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="linkName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkUrl" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="CAT_OPERACION_ESTRUCTURA" syncable="YES">
+        <attribute name="idCondicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idEstructura" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idOperacionEstructura" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="operacionEstrucuturaName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cat_condpro" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_CONDPRO" inverseName="cat_operacion_estructura" inverseEntity="CAT_CONDPRO" syncable="YES"/>
+        <relationship name="cat_estructura" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_ESTRUCTURA" inverseName="cat_operacion_estructura" inverseEntity="CAT_ESTRUCTURA" syncable="YES"/>
+    </entity>
+    <entity name="CAT_PUNTO_MEDICION" representedClassName="CAT_PUNTO_MEDICION" syncable="YES">
+        <attribute name="idPuntoMedicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idTipoPuntoMedicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idUnidadMedida" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitud" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitud" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="parametroReferencia" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="puntoMedicionName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valorReferencia" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="cat_punto_medicion_max_min" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_PUNTO_MEDICION_MAX_MIN" inverseName="cat_punto_medicion" inverseEntity="CAT_PUNTO_MEDICION_MAX_MIN" syncable="YES"/>
+        <relationship name="cat_tipo_punto_medicion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_TIPO_PUNTO_MEDICION" inverseName="cat_punto_medicion" inverseEntity="CAT_TIPO_PUNTO_MEDICION" syncable="YES"/>
+        <relationship name="cat_unidad_medida" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_UNIDAD_MEDIDA" inverseName="cat_punto_medicion" inverseEntity="CAT_UNIDAD_MEDIDA" syncable="YES"/>
+        <relationship name="ci_registro" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CI_REGISTRO" inverseName="cat_punto_medicion" inverseEntity="CI_REGISTRO" syncable="YES"/>
+        <relationship name="rel_est_puntomed" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="REL_EST_PUNTOMED" inverseName="cat_punto_medicion" inverseEntity="REL_EST_PUNTOMED" syncable="YES"/>
+    </entity>
+    <entity name="CAT_PUNTO_MEDICION_MAX_MIN" representedClassName="CAT_PUNTO_MEDICION_MAX_MIN" syncable="YES">
+        <attribute name="idPuntoMedicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idPuntoMedicionMaxMin" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="max" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="min" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="cat_punto_medicion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_PUNTO_MEDICION" inverseName="cat_punto_medicion_max_min" inverseEntity="CAT_PUNTO_MEDICION" syncable="YES"/>
+    </entity>
+    <entity name="CAT_SESION" representedClassName="CAT_SESION" syncable="YES">
+        <attribute name="idSesion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idUsuario" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isSaveSesion" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="app_usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APP_USUARIO" inverseName="cat_sesion" inverseEntity="APP_USUARIO" syncable="YES"/>
+    </entity>
+    <entity name="CAT_SISTEMA" representedClassName="CAT_SISTEMA" syncable="YES">
+        <attribute name="idSistema" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sistemaName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cat_estructura" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_ESTRUCTURA" inverseName="cat_sistema" inverseEntity="CAT_ESTRUCTURA" syncable="YES"/>
+    </entity>
+    <entity name="CAT_SYNC" syncable="YES">
+        <attribute name="actualDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idSync" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="CAT_TIPO_PUNTO_MEDICION" representedClassName="CAT_TIPO_PUNTO_MEDICION" syncable="YES">
+        <attribute name="idTipoPuntoMedicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="tipoPuntoMedicionName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cat_punto_medicion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_PUNTO_MEDICION" inverseName="cat_tipo_punto_medicion" inverseEntity="CAT_PUNTO_MEDICION" syncable="YES"/>
+    </entity>
+    <entity name="CAT_UNIDAD_MEDIDA" representedClassName="CAT_UNIDAD_MEDIDA" syncable="YES">
+        <attribute name="idUnidadMedida" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="unidadMedidaName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unidadMedidaShort" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cat_punto_medicion" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_PUNTO_MEDICION" inverseName="cat_unidad_medida" inverseEntity="CAT_PUNTO_MEDICION" syncable="YES"/>
+    </entity>
+    <entity name="CAT_UPLOAD_LOG" representedClassName="CAT_UPLOAD_LOG" syncable="YES">
+        <attribute name="idUploadLog" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idUsuario" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="ipDir" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msg" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pcName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="app_usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APP_USUARIO" inverseName="cat_upload_log" inverseEntity="APP_USUARIO" syncable="YES"/>
+    </entity>
+    <entity name="CI_REGISTRO" representedClassName="CI_REGISTRO" syncable="YES">
+        <attribute name="accionActual" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="diaRegistro" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="fechaCaptura" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="fechaNumerica" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="horaRegistro" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="idCondicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idPuntoMedicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idRegistro" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="serverLastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="valor" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="cat_condpro" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CAT_CONDPRO" inverseName="ci_registro" inverseEntity="CAT_CONDPRO" syncable="YES"/>
+        <relationship name="cat_punto_medicion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_PUNTO_MEDICION" inverseName="ci_registro" inverseEntity="CAT_PUNTO_MEDICION" syncable="YES"/>
+    </entity>
+    <entity name="REL_EST_PUNTOMED" representedClassName="REL_EST_PUNTOMED" syncable="YES">
+        <attribute name="idEstPuntoMed" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idEstructura" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idPuntoMedicion" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="cat_estructura" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_ESTRUCTURA" inverseName="rel_est_puntomed" inverseEntity="CAT_ESTRUCTURA" syncable="YES"/>
+        <relationship name="cat_punto_medicion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_PUNTO_MEDICION" inverseName="rel_est_puntomed" inverseEntity="CAT_PUNTO_MEDICION" syncable="YES"/>
+    </entity>
+    <entity name="REL_ESTRUCTURA_DEPENDENCIA" representedClassName="REL_ESTRUCTURA_DEPENDENCIA" syncable="YES">
+        <attribute name="idDependencia" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idEstructura" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="idEstructuraDependencia" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isActive" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isModified" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="cat_dependencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_DEPENDENCIA" inverseName="rel_estructura_dependencia" inverseEntity="CAT_DEPENDENCIA" syncable="YES"/>
+        <relationship name="cat_estructura" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CAT_ESTRUCTURA" inverseName="rel_estructura_dependencia" inverseEntity="CAT_ESTRUCTURA" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="APP_ROL" positionX="601" positionY="-954" width="128" height="133"/>
+        <element name="APP_USUARIO" positionX="268" positionY="-963" width="128" height="283"/>
+        <element name="APP_USUARIO_ROL" positionX="432" positionY="-756" width="128" height="148"/>
+        <element name="CAT_AGRUPADOR_ISOYETA" positionX="-218" positionY="-891" width="128" height="118"/>
+        <element name="CAT_CONDPRO" positionX="207" positionY="-369" width="128" height="163"/>
+        <element name="CAT_DEPENDENCIA" positionX="-369" positionY="-558" width="128" height="133"/>
+        <element name="CAT_ESTRUCTURA" positionX="-333" positionY="-288" width="128" height="193"/>
+        <element name="CAT_LINKS" positionX="-369" positionY="-891" width="128" height="133"/>
+        <element name="CAT_OPERACION_ESTRUCTURA" positionX="-90" positionY="-436" width="128" height="178"/>
+        <element name="CAT_PUNTO_MEDICION" positionX="187" positionY="-108" width="128" height="283"/>
+        <element name="CAT_PUNTO_MEDICION_MAX_MIN" positionX="-45" positionY="-244" width="128" height="118"/>
+        <element name="CAT_SESION" positionX="61" positionY="-963" width="128" height="103"/>
+        <element name="CAT_SISTEMA" positionX="-369" positionY="-46" width="128" height="133"/>
+        <element name="CAT_TIPO_PUNTO_MEDICION" positionX="-90" positionY="128" width="128" height="133"/>
+        <element name="CAT_UNIDAD_MEDIDA" positionX="432" positionY="131" width="128" height="148"/>
+        <element name="CAT_UPLOAD_LOG" positionX="54" positionY="-817" width="128" height="133"/>
+        <element name="CI_REGISTRO" positionX="385" positionY="-315" width="128" height="268"/>
+        <element name="REL_EST_PUNTOMED" positionX="-119" positionY="-81" width="128" height="163"/>
+        <element name="REL_ESTRUCTURA_DEPENDENCIA" positionX="-524" positionY="-405" width="128" height="163"/>
+        <element name="CAT_SYNC" positionX="-450" positionY="155" width="128" height="73"/>
+    </elements>
+</model>
