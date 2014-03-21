@@ -22,6 +22,8 @@
 
 @implementation LluviasAppDelegate
 
+//test2
+
 //@synthesize window = _window;
 @synthesize masterDetailManager = __masterDetailManager;
 
