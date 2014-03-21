@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B3C4930C18DCA4E300EA49FE /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C4930B18DCA4E200EA49FE /* GoogleMaps.framework */; };
+		B3F9D3E418DCA7C500FCCC3E /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F9D3E318DCA7C500FCCC3E /* GoogleMaps.framework */; };
 		D300F92518B7D182001B17B5 /* LluviasLumbrerasViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D300F92418B7D182001B17B5 /* LluviasLumbrerasViewCell.m */; };
 		D30A15E718BB069A0018A7FB /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30A15E618BB069A0018A7FB /* ShinobiCharts.framework */; };
 		D30A15EB18BB80880018A7FB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D30A15EA18BB80880018A7FB /* Security.framework */; };
@@ -137,6 +138,7 @@
 
 /* Begin PBXFileReference section */
 		B3C4930B18DCA4E200EA49FE /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../../../Curso iOS/GoogleMaps-iOS-1.7.0 2/GoogleMaps.framework"; sourceTree = "<group>"; };
+		B3F9D3E318DCA7C500FCCC3E /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../../../Curso iOS/GoogleMaps-iOS-1.7.0/GoogleMaps.framework"; sourceTree = "<group>"; };
 		D300F92318B7D182001B17B5 /* LluviasLumbrerasViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LluviasLumbrerasViewCell.h; sourceTree = "<group>"; };
 		D300F92418B7D182001B17B5 /* LluviasLumbrerasViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LluviasLumbrerasViewCell.m; sourceTree = "<group>"; };
 		D30A15E618BB069A0018A7FB /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShinobiCharts.framework; path = Library/Frameworks/ShinobiCharts.framework; sourceTree = DEVELOPER_DIR; };
@@ -312,6 +314,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F9D3E418DCA7C500FCCC3E /* GoogleMaps.framework in Frameworks */,
 				B3C4930C18DCA4E300EA49FE /* GoogleMaps.framework in Frameworks */,
 				D32ADFBF18D0E55F000B61A1 /* AVFoundation.framework in Frameworks */,
 				D32ADFBE18D0E31E000B61A1 /* MapKit.framework in Frameworks */,
@@ -549,6 +552,7 @@
 		D3B1524718B508BA00ECCA70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B3F9D3E318DCA7C500FCCC3E /* GoogleMaps.framework */,
 				B3C4930B18DCA4E200EA49FE /* GoogleMaps.framework */,
 				D32ADFBD18D0E31E000B61A1 /* MapKit.framework */,
 				D30A15EA18BB80880018A7FB /* Security.framework */,
@@ -1124,6 +1128,8 @@
 					/Users/JuanSalazar/Documents/IMC/Curso,
 					"iOS/GoogleMaps-iOS-1.7.0",
 					2,
+					/Users/JuanSalazar/Documents/IMC/Curso,
+					"iOS/GoogleMaps-iOS-1.7.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lluviasIMC/lluviasIMC-Prefix.pch";
@@ -1147,6 +1153,8 @@
 					/Users/JuanSalazar/Documents/IMC/Curso,
 					"iOS/GoogleMaps-iOS-1.7.0",
 					2,
+					/Users/JuanSalazar/Documents/IMC/Curso,
+					"iOS/GoogleMaps-iOS-1.7.0",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lluviasIMC/lluviasIMC-Prefix.pch";
