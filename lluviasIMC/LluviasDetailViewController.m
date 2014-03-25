@@ -19,6 +19,7 @@
 
 //#import <GoogleMaps/GoogleMaps.h>
 // esta es una prueba para gitHub
+//comentario chido de juan
 @interface LluviasDetailViewController ()
 
 // valores para las etiquetas personalizadas de navigationBar.
